@@ -55,3 +55,53 @@ class _MyWidgetState extends State<MyWidget> {
     return Text('$counter');
   }
 }
+
+Constructor → createElement → build
+
+Constructor → createState → initState → didChangeDependencies → build → setState → build (반복) → dispose
+
+ListView(
+  children: [
+    Text('Item 1'),
+    Text('Item 2'),
+    Text('Item 3'),
+  ],
+)
+
+GridView(
+  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+    crossAxisCount: 3,
+  ),
+  children: [
+    Text('A'),
+    Text('B'),
+    Text('C'),
+  ],
+)
+
+PageView(
+  children: [
+    Container(color: Colors.red),
+    Container(color: Colors.blue),
+    Container(color: Colors.green),
+  ],
+)
+
+AnimatedOpacity(
+  duration: Duration(seconds: 1),
+  opacity: isVisible ? 1.0 : 0.0,
+  child: Text('Fade In/Out'),
+)
+
+AnimatedPositioned(
+  duration: Duration(milliseconds: 500),
+  left: 100,
+  child: Container(width: 50, height: 50, color: Colors.blue),
+)
+
+AnimatedContainer(
+  duration: Duration(milliseconds: 300),
+  width: 100,
+  height: 100,
+  color: Colors.red,
+)
